@@ -157,25 +157,35 @@ Nuestra red neuronal está definida, y configurada, en el archivo “config-feed
 A continuación, explicamos algunos de los parámetros NN más importantes del documento “config-feedforward.txt” que usaremos para configurar nuestra red neuronal:
 
 activation_default = tanh → Función de activación por defecto
+
 activation_mutate_rate = 0.0 → Si queremos cambiar la función de activación para que sea otra cosa aleatoriamente, puede cambiar este valor para que sea un X% de probabilidad de que cada vez que creemos un nuevo miembro de la población, obtenga una función de activación aleatoria diferente.
+
 activation_options = tanh
 
-# network parameters
+\# network parameters
+
 num_hidden = 0
+
 num_inputs = 3 → Tenemos tres inputs; posición Y del ave, la distancia entre la posición Y del ave y la posición de la tubería de arriba (top) y, por último, la distancia entre la posición Y del ave y la posición de la tubería inferior (bottom).
+
 num_outputs = 1 → Tenemos una única salida: si salta o no lo hace. Si el valor que devuelve la función de activación es mayor que 0.5 saltará, si no no, lo hará.
 
 [DefaultSpeciesSet]
+
 compatibility_threshold = 3.0 → Se considera que los individuos cuya distancia genómica es menor que este umbral pertenecen a la misma especie.
 
 [DefaultStagnation]
+
 species_fitness_func = max → La función utilizada para calcular la aptitud de las aves. Su valor predeterminado es “mean”
+
 max_stagnation = 20 → Las aves que no hayan mostrado una mejora en más de este número de generaciones se considerarán estancadas y eliminadas. Este valor predeterminado es 15.
 
 species_elitism = 2 → El número de aves que se protegerán del estancamiento, el ajuste de 3 evitará que las 3 aves con la mayor aptitud de especie sean eliminadas para el estancamiento, independientemente de la cantidad de tiempo que no hayan mostrado mejora. Este valor predeterminado es 0.
 
 [DefaultReproduction]
+
 elitism = 2 ​→ El número de aves que estarán protegidas del estancamiento; destinado principalmente para evitar las extinciones totales causadas por el estancamiento de todas las aves antes de que surjan nuevas. Por ejemplo, una configuración de elitismo de 3 evitará que las 3 aves con la mayor aptitud de especie se eliminen por estancamiento independientemente de la cantidad de tiempo que no hayan mostrado una mejora. Este valor predeterminado es 0.
+
 survival_threshold = 0.2 → La fracción de cada ave que permite reproducir cada generación. Este valor predeterminado es 0.2.
 
 ### Algoritmo Genético (GA) y sus parámetros
