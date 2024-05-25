@@ -22,7 +22,7 @@ pip install -r requirements.txt
 python neural_network.py
 ```
 
-# Documentation
+# Documentación
 
 ![0](./images/0.png)
 
